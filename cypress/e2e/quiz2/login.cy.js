@@ -19,12 +19,11 @@ describe('Login', () => {
     cy.get('#pass-error').should('contain.text','This is a required field.')
   })
   it.only('Login - Success', () => {
-    cy.get('.panel > .header > .authorization-link > a').click()
-    cy.wait(2000)
-    cy.get('#email').type('viane@gmail.com')
-    cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .password > .control > #pass').type('Viane1234.')
-    cy.wait(200)
-    cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2').click()
+    cy.fixture('userData.json').then((users) => {
+      const datauser =users;
+      cy.login(datauser.email,datauser.passw)
+    })
+    
   })
 
 /*Forgot password*/

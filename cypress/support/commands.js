@@ -20,21 +20,15 @@ Cypress.Commands.add('BuatBaru', (first, last, email, password, passwordco) => {
     cy.get('#form-validate > .actions-toolbar > div.primary > .action').click()
  })
 
- Cypress.Commands.add('loginedit', (first, last, email, password, passwordco) => { 
- cy.get('.panel > .header > .authorization-link > a').click()
+ Cypress.Commands.add('login', () => { 
+    cy.get('.panel > .header > .authorization-link > a').click()
     cy.wait(2000)
     cy.get('#email').type('viane@gmail.com')
     cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .password > .control > #pass').type('Viane1234.')
     cy.wait(200)
     cy.get('.login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2').click()
-})
+  })
 
-Cypress.Commands.add('ketikEdit', (elemen,value) => { 
-    cy.get(elemen)
-    .should()
-    .clear()
-    .type(value)
- })
 //
 //
 // -- This is a child command --
