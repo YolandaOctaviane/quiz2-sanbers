@@ -1,7 +1,7 @@
 describe('Create Account', () => {
   beforeEach(() => {
     cy.visit('')
-    cy.loginedit()
+    cy.login()
   })
   /*EDIT ACCOUNT */
   it('Edit empty name - Failed', () => {
