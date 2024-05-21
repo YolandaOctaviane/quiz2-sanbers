@@ -1,4 +1,4 @@
-describe('template spec', () => {
+describe('Login', () => {
   beforeEach(() => {
     cy.visit('')
   })
@@ -18,7 +18,7 @@ describe('template spec', () => {
     cy.get('#email-error').should('contain.text','This is a required field.')
     cy.get('#pass-error').should('contain.text','This is a required field.')
   })
-  it('Login - Success', () => {
+  it.only('Login - Success', () => {
     cy.get('.panel > .header > .authorization-link > a').click()
     cy.wait(2000)
     cy.get('#email').type('viane@gmail.com')
